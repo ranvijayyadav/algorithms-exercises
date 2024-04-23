@@ -9,6 +9,26 @@ function linearSearch(id, array) {
 
 function binarySearch(id, array) {
   // code goes here
+  let min = 0;
+  let max = length-1;
+  let index;
+  let element;
+  let finalElement;
+  while (min <= max) {
+    index = Math.floor((min + max) / 2);
+    element = array[index];
+
+    if (element.id < id) {
+      min = index + 1;
+    } else if (element.id > id) {
+      max = index - 1;
+    } else {
+      finalElement = element;
+      console.log(finalElement, "finalElement")
+    }
+  }
+
+  return finalElement;
 }
 
 // unit tests
